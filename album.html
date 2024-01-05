@@ -1,0 +1,438 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #212121;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .swiper {
+            max-width: 50%;
+            overflow: visible;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            filter: blur(100);
+            -webkit-box-reflect: below 195px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, #00000000), to(rgb(250 250 250 / 40%)));
+
+        }
+
+        .swiper-slide::after {
+            position: absolute;
+            content: "";
+            inset: 0;
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background: linear-gradient(to bottom right, #b8b8b88f, #ffffff5e);
+        }
+
+        .swiper-slide-active::after {
+            background: none;
+        }
+
+        .swiper-slide>div {
+            text-align: center;
+            display: none;
+            opacity: 0;
+        }
+
+        .swiper-slide-active div {
+            display: block;
+            opacity: 1;
+        }
+
+        .swiper-slide h2 {
+            font-size: 1.2rem;
+            font-family: "Libre Baskerville", serif;
+            position: relative;
+        }
+
+        .swiper-slide h2::after {
+            position: absolute;
+            content: "";
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 2px;
+            background: linear-gradient(#FF5722, #F44336);
+        }
+
+        @keyframes line {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        .swiper-slide-active h2::after {
+            animation: line 0.5s linear forwards;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            box-shadow: 0px 3px 17px rgb(0 0 0 / 25%);
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+        }
+
+        .swiper-slide h2 {
+            color: #fff;
+        }
+
+        @media (min-width: 768px) {
+            .swiper-slide h2 {
+                font-size: 2rem;
+            }
+        }
+        .swiper-slide h2 a {
+    text-decoration: none;
+}
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+          <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+        <h5 class="preloader-text">Loading</h5>
+    </div>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="wedding.html">
+                    <img src="wedding2.jpg" alt="Witch Aka Wanda" />
+                    <div>
+                        <h2>Wedding Photography</h2>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="street.html">
+                    <img src="street2.jpg" alt="Pizza" />
+                    <div>
+                        <h2>Street Photography</h2>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="your_street_photography_link.html">
+                    <img src="street2.jpg" alt="Pizza" />
+                    <div>
+                        <h2>Portraits</h2>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="your_street_photography_link.html">
+                    <img src="https://images.hdqwalls.com/wallpapers/venom-web-of-carnage-64.jpg" alt="Pizza" />
+                    <div>
+                        <h2>Outdoor photos</h2>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="your_street_photography_link.html">
+                    <img src="https://images.hdqwalls.com/wallpapers/venom-web-of-carnage-64.jpg" alt="Pizza" />
+                    <div>
+                        <h2>Events and Celebrations</h2>                
+                        </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            loop: true,
+            slidesPerView: "1",
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 4,
+                slideShadows: false
+            },
+            keyboard: {
+                enabled: true
+            },
+            mousewheel: {
+                thresholdDelta: 70
+            },
+            initialSlide: 0,
+            on: {
+                click(event) {
+                    swiper.slideTo(this.clickedIndex);
+                }
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Swiper</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+ 
+     <style>
+         @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+ 
+         html,
+         body {
+             position: relative;
+             height: 100%;
+         }
+ 
+         body {
+             background: #212121;
+             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+             font-size: 14px;
+             color: #000;
+             margin: 0;
+             padding: 0;
+             overflow-x: hidden;
+         }
+ 
+         .swiper {
+             max-width: 50%;
+             overflow: visible;
+             position: absolute;
+             top: 30%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+         }
+ 
+         .swiper-slide {
+             background-position: center;
+             background-size: cover;
+             width: 300px;
+             height: 300px;
+             position: relative;
+             filter: blur(100);
+             -webkit-box-reflect: below 195px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, #00000000), to(rgb(250 250 250 / 40%)));
+         }
+ 
+         .swiper-slide::after {
+             position: absolute;
+             content: "";
+             inset: 0;
+             width: 100%;
+             aspect-ratio: 1/1;
+             border-radius: 50%;
+             background: linear-gradient(to bottom right, #b8b8b88f, #ffffff5e);
+         }
+ 
+         .swiper-slide-active::after {
+             background: none;
+         }
+ 
+         .swiper-slide>div {
+             text-align: center;
+             display: none;
+             opacity: 0;
+         }
+ 
+         .swiper-slide-active div {
+             display: block;
+             opacity: 1;
+         }
+ 
+         .swiper-slide h2 {
+             font-size: 1.2rem;
+             font-family: "Libre Baskerville", serif;
+             position: relative;
+         }
+ 
+         .swiper-slide h2::after {
+             position: absolute;
+             content: "";
+             bottom: -20px;
+             left: 50%;
+             transform: translateX(-50%);
+             height: 2px;
+             background: linear-gradient(#FF5722, #F44336);
+         }
+ 
+         @keyframes line {
+             0% {
+                 width: 0;
+             }
+ 
+             100% {
+                 width: 100%;
+             }
+         }
+ 
+         .swiper-slide-active h2::after {
+             animation: line 0.5s linear forwards;
+         }
+ 
+         .swiper-slide img {
+             display: block;
+             width: 100%;
+             object-fit: cover;
+             box-shadow: 0px 3px 17px rgb(0 0 0 / 25%);
+             border-radius: 50%;
+             aspect-ratio: 1/1;
+         }
+ 
+         .swiper-slide h2 {
+             color: #fff;
+         }
+ 
+         .swiper-slide a {
+             display: block;
+             width: 100%;
+             height: 100%;
+             text-decoration: none; /* Remove underline from the link */
+         }
+ 
+         @media (min-width: 768px) {
+             .swiper-slide h2 {
+                 font-size: 2rem;
+             }
+         }
+     </style>
+ </head>
+ 
+ <body>
+     <div class="preloader">
+         <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+           <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+         </svg>
+         <h5 class="preloader-text">Loading</h5>
+     </div>
+     <div class="swiper mySwiper">
+         <div class="swiper-wrapper">
+             <a     style="text-decoration: none;" href="wedding.html" class="swiper-slide">
+                     <img src="wedding2.jpg" alt="Witch Aka Wanda" />
+                     <div>
+                         <h2>Wedding Photography</h2>
+                     </div>
+                    </a>
+             <a  style="text-decoration: none;"  href="street.html" class="swiper-slide">
+                 
+                     <img src="street2.jpg" alt="Pizza" />
+                     <div>
+                         <h2>Street Photography</h2>
+                     </div>
+                 
+                </a>
+             <a   style="text-decoration: none;"  href="portraits.html" class="swiper-slide">
+               
+                     <img src="67.jpeg" alt="Pizza" />
+                     <div>
+                         <h2>Portraits</h2>
+                     </div>
+                 
+                </a>
+             <a   style="text-decoration: none;" href="outdoor.html"  class="swiper-slide">
+                 <!-- <a > -->
+                     <img src="outdoor.jpg" alt="Pizza" />
+                     <div>
+                         <h2>Outdoor photos</h2>
+                     </div>
+                 <!-- </a> -->
+             </a>
+             <a  style="text-decoration: none;"  href="celebration.html" class="swiper-slide">
+                 <!-- <a > -->
+                     <img src="celebration.jpg" alt="Pizza" />
+                     <div>
+                         <h2>Events and Celebrations</h2>                
+                     </div>
+                 <!-- </a> -->
+             </a>
+         </div>
+     </div>
+ 
+     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+     <script>
+         var swiper = new Swiper(".mySwiper", {
+             effect: "coverflow",
+             grabCursor: true,
+             centeredSlides: true,
+             loop: true,
+             slidesPerView: "1",
+             coverflowEffect: {
+                 rotate: 0,
+                 stretch: 0,
+                 depth: 100,
+                 modifier: 4,
+                 slideShadows: false
+             },
+             keyboard: {
+                 enabled: true
+             },
+             mousewheel: {
+                 thresholdDelta: 70
+             },
+             initialSlide: 0,
+             on: {
+                 click(event) {
+                     swiper.slideTo(this.clickedIndex);
+                 }
+             },
+             breakpoints: {
+                 640: {
+                     slidesPerView: 2
+                 }
+             }
+         });
+     </script>
+ </body>
+ 
+ </html>
