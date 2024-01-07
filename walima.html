@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .image-grid {
+            background-color: black;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer; /* Add cursor style to indicate clickable */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-grid" id="imageGrid"></div>
+<!-- <img src="" alt=""> -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const imageGrid = document.getElementById("imageGrid");
+
+            const images = [ "./images/walima photography/walima (1).jpg",
+  "./images/walima photography/walima (2).jpg",
+  "./images/walima photography/walima (3).jpg",
+  "./images/walima photography/walima (4).jpg",
+  "./images/walima photography/walima (5).jpg",
+  "./images/walima photography/walima (6).jpg",
+  "./images/walima photography/walima (7).jpg",
+  "./images/walima photography/walima (8).jpg",
+  "./images/walima photography/walima (9).jpg",
+  "./images/walima photography/walima (10).jpg",
+  "./images/walima photography/walima (11).jpg",
+  "./images/walima photography/walima (12).jpg",
+  "./images/walima photography/walima (13).jpg",
+  "./images/walima photography/walima (14).jpg",
+  "./images/walima photography/walima (15).jpg",
+  "./images/walima photography/walima (16).jpg",
+  "./images/walima photography/walima (17).jpg",
+  "./images/walima photography/walima (18).jpg",
+  "./images/walima photography/walima (19).jpg",
+  "./images/walima photography/walima (20).jpg",
+  "./images/walima photography/walima (21).jpg",
+  "./images/walima photography/walima (22).jpg",
+  "./images/walima photography/walima (23).jpg",
+  "./images/walima photography/walima (24).jpg",
+  "./images/walima photography/walima (25).jpg",
+  "./images/walima photography/walima (26).jpg",
+  "./images/walima photography/walima (27).jpg",
+  "./images/walima photography/walima (28).jpg",
+  "./images/walima photography/walima (29).jpg",
+  "./images/walima photography/walima (30).jpg",
+  "./images/walima photography/walima (31).jpg",
+  "./images/walima photography/walima (32).jpg",
+  "./images/walima photography/walima (33).jpg",
+  "./images/walima photography/walima (34).jpg",
+  "./images/walima photography/walima (35).jpg",
+  "./images/walima photography/walima (36).jpg",
+  "./images/walima photography/walima (37).jpg",
+  "./images/walima photography/walima (38).jpg",
+  "./images/walima photography/walima (39).jpg",
+  "./images/walima photography/walima (40).jpg",
+  "./images/walima photography/walima (41).jpg",
+  "./images/walima photography/walima (42).jpg",
+  "./images/walima photography/walima (43).jpg",
+  "./images/walima photography/walima (44).jpg",
+  "./images/walima photography/walima (45).jpg",
+  "./images/walima photography/walima (46).jpg",
+  "./images/walima photography/walima (47).jpg",
+  "./images/walima photography/walima (48).jpg",
+  "./images/walima photography/walima (49).jpg",
+  "./images/walima photography/walima (50).jpg",];
+ 
+            images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = image;
+                img.alt = image; // You can set a different alt text if needed
+                img.addEventListener("click", function () {
+                    // Open a new page with the image source
+                    window.open(img.src, "_blank");
+                });
+                imageGrid.appendChild(img);
+            });
+        });
+    </script>
+</body>
+</html>

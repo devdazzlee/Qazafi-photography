@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .image-grid {
+            background-color: black;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer; /* Add cursor style to indicate clickable */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-grid" id="imageGrid"></div>
+<!-- <img src="" alt=""> -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const imageGrid = document.getElementById("imageGrid");
+
+            const images = ["./images/catalog photography/catalog (1).jpg",
+  "./images/catalog photography/catalog (2).jpg",
+  "./images/catalog photography/catalog (3).jpg",
+  "./images/catalog photography/catalog (4).jpg",
+  "./images/catalog photography/catalog (5).jpg",
+  "./images/catalog photography/catalog (6).jpg",
+  "./images/catalog photography/catalog (7).jpg",
+  "./images/catalog photography/catalog (8).jpg",
+  "./images/catalog photography/catalog (9).jpg",
+  "./images/catalog photography/catalog (10).jpg",
+  "./images/catalog photography/catalog (11).jpg",
+  "./images/catalog photography/catalog (12).jpg",
+  "./images/catalog photography/catalog (13).jpg",
+  "./images/catalog photography/catalog (14).jpg",
+  "./images/catalog photography/catalog (15).jpg",
+  "./images/catalog photography/catalog (16).jpg",
+  "./images/catalog photography/catalog (17).jpg",
+  "./images/catalog photography/catalog (18).jpg",
+  "./images/catalog photography/catalog (19).jpg",
+  "./images/catalog photography/catalog (20).jpg",
+  "./images/catalog photography/catalog (21).jpg",
+  "./images/catalog photography/catalog (22).jpg",
+  "./images/catalog photography/catalog (23).jpg",
+  "./images/catalog photography/catalog (24).jpg",
+  "./images/catalog photography/catalog (25).jpg",
+  "./images/catalog photography/catalog (26).jpg",
+  "./images/catalog photography/catalog (27).jpg",
+  "./images/catalog photography/catalog (28).jpg",
+  "./images/catalog photography/catalog (29).jpg",
+  "./images/catalog photography/catalog (30).jpg",
+  "./images/catalog photography/catalog (31).jpg",
+  "./images/catalog photography/catalog (32).jpg",
+  "./images/catalog photography/catalog (33).jpg",
+  "./images/catalog photography/catalog (34).jpg",
+  "./images/catalog photography/catalog (35).jpg",
+  "./images/catalog photography/catalog (36).jpg",
+  "./images/catalog photography/catalog (37).jpg",
+  "./images/catalog photography/catalog (38).jpg",
+  "./images/catalog photography/catalog (39).jpg",
+  "./images/catalog photography/catalog (40).jpg",
+  "./images/catalog photography/catalog (41).jpg",
+  "./images/catalog photography/catalog (42).jpg",
+  "./images/catalog photography/catalog (43).jpg",
+  "./images/catalog photography/catalog (44).jpg",
+  "./images/catalog photography/catalog (45).jpg",
+  "./images/catalog photography/catalog (46).jpg",
+  "./images/catalog photography/catalog (47).jpg",
+  "./images/catalog photography/catalog (48).jpg",
+  "./images/catalog photography/catalog (49).jpg",
+  "./images/catalog photography/catalog (50).jpg",
+  "./images/catalog photography/catalog (51).jpg",
+  "./images/catalog photography/catalog (52).jpg",
+  "./images/catalog photography/catalog (53).jpg",
+  "./images/catalog photography/catalog (54).jpg",
+  "./images/catalog photography/catalog (55).jpg",
+  "./images/catalog photography/catalog (56).jpg",
+  "./images/catalog photography/catalog (57).jpg",
+  "./images/catalog photography/catalog (58).jpg",
+  "./images/catalog photography/catalog (59).jpg",
+  "./images/catalog photography/catalog (60).jpg",
+  "./images/catalog photography/catalog (61).jpg",
+  "./images/catalog photography/catalog (62).jpg",
+  "./images/catalog photography/catalog (63).jpg",
+  "./images/catalog photography/catalog (64).jpg",
+  "./images/catalog photography/catalog (65).jpg",
+  "./images/catalog photography/catalog (66).jpg",
+  "./images/catalog photography/catalog (67).jpg",
+  "./images/catalog photography/catalog (68).jpg",
+  "./images/catalog photography/catalog (69).jpg",
+  "./images/catalog photography/catalog (70).jpg",
+  "./images/catalog photography/catalog (71).jpg",
+  "./images/catalog photography/catalog (72).jpg",
+  "./images/catalog photography/catalog (73).jpg",
+  "./images/catalog photography/catalog (74).jpg",];
+ 
+            images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = image;
+                img.alt = image; // You can set a different alt text if needed
+                img.addEventListener("click", function () {
+                    // Open a new page with the image source
+                    window.open(img.src, "_blank");
+                });
+                imageGrid.appendChild(img);
+            });
+        });
+    </script>
+</body>
+</html>

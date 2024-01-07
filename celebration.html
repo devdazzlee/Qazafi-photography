@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .image-grid {
+            background-color: black;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer; /* Add cursor style to indicate clickable */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-grid" id="imageGrid"></div>
+<!-- <img src="" alt=""> -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const imageGrid = document.getElementById("imageGrid");
+
+            const images = [  "./images/events and celebrations/event (1).jpg",
+  "./images/events and celebrations/event (2).jpg",
+  "./images/events and celebrations/event (3).jpg",
+  "./images/events and celebrations/event (4).jpg",
+  "./images/events and celebrations/event (5).jpg",
+  "./images/events and celebrations/event (6).jpg",
+  "./images/events and celebrations/event (7).jpg",
+  "./images/events and celebrations/event (8).jpg",
+  "./images/events and celebrations/event (9).jpg",
+  "./images/events and celebrations/event (10).jpg",
+  "./images/events and celebrations/event (11).jpg",
+  "./images/events and celebrations/event (12).jpg",
+  "./images/events and celebrations/event (13).jpg",
+  "./images/events and celebrations/event (14).jpg",
+  "./images/events and celebrations/event (15).jpg",
+  "./images/events and celebrations/event (16).jpg",
+  "./images/events and celebrations/event (17).jpg",
+  "./images/events and celebrations/event (18).jpg",
+  "./images/events and celebrations/event (19).jpg",
+  "./images/events and celebrations/event (20).jpg",
+  "./images/events and celebrations/event (21).jpg",
+  "./images/events and celebrations/event (22).jpg",
+];
+
+            images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = image;
+                img.alt = image; // You can set a different alt text if needed
+                img.addEventListener("click", function () {
+                    // Open a new page with the image source
+                    window.open(img.src, "_blank");
+                });
+                imageGrid.appendChild(img);
+            });
+        });
+    </script>
+</body>
+</html>
